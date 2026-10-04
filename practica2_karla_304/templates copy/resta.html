@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resta</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+
+    <header class="encabezado">
+        <h1>Calculadora básica con Flask</h1>
+
+        <nav class="menu">
+            <a href="/suma">Suma</a>
+            <a href="/resta">Resta</a>
+            <a href="/multiplicacion">Multiplicación</a>
+            <a href="/division">División</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+        <section class="tarjeta-operacion">
+            <h2>Resta</h2>
+            <form method="POST">
+                <label for="numero1">Primer número</label>
+                <input id="numero1" name="numero1"
+                       type="number" step="any" required>
+
+                <label for="numero2">Segundo número</label>
+                <input id="numero2" name="numero2"
+                       type="number" step="any" required>
+
+                <button class="boton" type="submit">
+                    Calcular resta
+                </button>
+            </form>
+            {% if resultado is not none %}
+                <p class="resultado">
+                    Resultado: {{ resultado }}
+                </p>
+            {% endif %}
+        </section>
+    </main>
+
+</body>
+</html>

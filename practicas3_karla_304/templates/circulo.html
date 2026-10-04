@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perímetro del círculo</title>
+</head>
+<body>
+    <h1>Perímetro del círculo</h1>
+    <form method="POST">
+        <label>Radio:</label>
+        <input type="text" name="radio" required>
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultado is not none %}
+        <p>El perímetro es: {{ resultado }}</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color:red">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
